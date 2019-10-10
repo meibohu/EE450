@@ -1,0 +1,7 @@
+#pragma once
+#define CLIENT_PORT 25067 
+#define MONITOR_PORT 26067
+#define BACKA_PORT 21067
+#define BACKB_PORT 22067
+#define BACKC_PORT 23067
+#define MAXLINE 1024

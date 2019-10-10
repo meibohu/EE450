@@ -1,0 +1,44 @@
+Please note monitor is not implemented
+
+files:
+makefile
+aws.cpp
+client.cpp
+serverA.cpp
+serverB.cpp
+serverC.cpp
+port.h
+msg.h
+msg.cpp
+udpServer.h
+udpServer.cpp
+dbclass.h
+dbclass.cpp
+computeClass.h
+computeClass.cpp
+
+port.h: all the ports are define in this file
+
+msg.h, msg.cpp: 
+This is the class that send through the TCP/UDP. The member variables of this class include all the infomation we need send through the network.
+It has serilization and deserilization function that convert the class object into a string so that the class can send through network.
+
+udpServer.h udpServer.cpp:
+This class is the super class of both dbclass and computeClass. It's an class that has setupUDP function which are used in server A, B and C.
+
+dbclass.h, dbclass.cpp:
+This is the child class of udpServer. It can read the database in to a map and when it runs, it can search through the map.
+
+computeClass.h computeClass.cpp:
+This is the child class of udpServer. It is used in serverC. It can takes request and compute.
+
+How to run:
+I wrote a make file that done everything.
+
+Compile: make all
+run serverA: ./serverA.o or make serverA
+run serverB: ./serverB.o or make serverB
+run serverC: ./serverC.o or make serverC
+run aws: 	 ./awsout.o  or make aws
+run client:  ./client 1 2 3
+clean files: make clean
